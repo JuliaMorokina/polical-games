@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', function () {
       skins = document.getElementsByClassName('skin-color'),
       prevSkin = skinBlock.querySelector('.prev'),
       nextSkin = skinBlock.querySelector('.next');
-  personSkin.style.backgroundImage = "url(../img/skin/skin-1.png)";
+  personSkin.style.backgroundImage = "url(img/skin/skin-1.png)";
 
   function changeSkin(index) {
     if (index > skins.length) {
@@ -67,9 +67,9 @@ window.addEventListener('DOMContentLoaded', function () {
     skins[skinIndex - 1].style.display = 'block';
 
     if (female.checked == true) {
-      personSkin.style.backgroundImage = "url(../img/skin/skin-".concat(skinIndex + 3, ".png)");
+      personSkin.style.backgroundImage = "url(img/skin/skin-".concat(skinIndex + 3, ".png)");
     } else {
-      personSkin.style.backgroundImage = "url(../img/skin/skin-".concat(skinIndex, ".png)");
+      personSkin.style.backgroundImage = "url(img/skin/skin-".concat(skinIndex, ".png)");
     }
   }
 
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded', function () {
       hair = document.getElementsByClassName('hair-style'),
       prevHair = hairBlock.querySelector('.prev'),
       nextHair = hairBlock.querySelector('.next');
-  personHair.style.backgroundImage = "url(../img/hair/construct/hair-1.png)";
+  personHair.style.backgroundImage = "url(img/hair/construct/hair-1.png)";
 
   function changeHair(index) {
     if (female.checked == true) {
@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     hair[hairIndex - 1].style.display = 'block';
-    personHair.style.backgroundImage = "url(../img/hair/construct/hair-".concat(hairIndex, ".png)");
+    personHair.style.backgroundImage = "url(img/hair/construct/hair-".concat(hairIndex, ".png)");
   }
 
   function moveStyleHair(n) {
@@ -134,7 +134,7 @@ window.addEventListener('DOMContentLoaded', function () {
       clothes = document.getElementsByClassName('clothes-style'),
       prevClothes = clothesBlock.querySelector('.prev'),
       nextClothes = clothesBlock.querySelector('.next');
-  personClothes.style.backgroundImage = "url(../img/clothes/construct/clothes-1.png)";
+  personClothes.style.backgroundImage = "url(img/clothes/construct/clothes-1.png)";
 
   function changeClothes(index) {
     if (female.checked == true) {
@@ -160,7 +160,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     clothes[clothesIndex - 1].style.display = 'block';
-    personClothes.style.backgroundImage = "url(../img/clothes/construct/clothes-".concat(clothesIndex, ".png)");
+    personClothes.style.backgroundImage = "url(img/clothes/construct/clothes-".concat(clothesIndex, ".png)");
   }
 
   function moveStyleClothes(n) {
@@ -238,7 +238,7 @@ window.addEventListener('DOMContentLoaded', function () {
     person.appendChild(candidateClothes).classList.add('person-clothes');
     candidateClothes.style.backgroundImage = clothesBgr;
     person.appendChild(candidateShoes).classList.add('person-shoes');
-    candidateShoes.style.backgroundImage = 'url(../img/clothes/construct/shoes.png)'; // подставляем данные в карточку
+    candidateShoes.style.backgroundImage = 'url(img/clothes/construct/shoes.png)'; // подставляем данные в карточку
 
     var candidateName = document.createElement('div'),
         candidateAge = document.createElement('div'),
