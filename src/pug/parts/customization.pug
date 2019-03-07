@@ -1,0 +1,58 @@
+.custom
+    .custom-info
+        label(for="name") Фамилия Имя Отчество
+        input(type="text", id="name")
+        label(for="age") Возраст, лет
+        input(type="text", id="age")
+        .radio
+            input(value="Мужской", id="male", checked, name="sex", type="radio")
+            label(for="male") Мужчина
+            input(value="Женский", id="female", name="sex", type="radio") 
+            label(for="female") Женщина
+        select(id="select")
+            option(value="Либеральные") Либеральные
+            option(value="Левые") Левые
+            option(value="Правые") Правые
+        label(for="bio") Биография
+        textarea(name="bio", id="bio", cols="40", rows="8")
+    .custom-char
+        .person.construct
+            .person-skin(id="person-skin")
+            .person-clothes(id="person-clothes")
+            .person-hair(id="person-hair")
+            .person-shoes
+        .btn(id="ready") готово
+    .custom-style
+        .text Выберите цвет кожи
+        .skin 
+            .prev
+                i.flaticon-left-arrow
+            .skin-color.skin-color-1
+            .skin-color.skin-color-2
+            .skin-color.skin-color-3
+            .next
+                i.flaticon-right-arrow
+        .text Выберите прическу
+        .hair
+            .prev
+                i.flaticon-left-arrow
+            .hair-style.hair-style-1
+            .hair-style.hair-style-2
+            .hair-style.hair-style-3
+            .hair-style.hair-style-4
+            .hair-style.hair-style-5
+            .hair-style.hair-style-6
+            .next
+                i.flaticon-right-arrow
+        .text Выберите одежду
+        .clothes
+            .prev
+                i.flaticon-left-arrow
+            .clothes-style.clothes-style-1
+            .clothes-style.clothes-style-2
+            .clothes-style.clothes-style-3
+            .clothes-style.clothes-style-4
+            .clothes-style.clothes-style-5
+            .clothes-style.clothes-style-6
+            .next
+                i.flaticon-right-arrow
