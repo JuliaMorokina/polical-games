@@ -384,13 +384,24 @@ window.addEventListener('DOMContentLoaded', function() {
     let resetBtn = document.getElementById('reset');
 
     resetBtn.addEventListener('click', () => {
-        let card = document.getElementsByClassName('main-cards__item')[2],
+        let      
+            card = document.getElementsByClassName('main-cards__item')[2],
             cardsBlock = document.querySelector('.main-cards');
-
+        
         cardsBlock.removeChild(card);
+
+        // обнуляем набранные голоса
+        let resultNumber = document.getElementsByClassName('result-count');
+
+        for(let i = 0; i < resultNumber.length; i++) {
+            resultNumber[i].innerHTML = '0%';
+        }
+        style();
         // скрываем главный экран и модальное окно
         overlay.style.display = 'none';
         mainBlock.style.display = 'none';
+
+        
         // показываем экран создания кандидата
         customBlock.style.display = 'flex';
         customInfo.style.display = 'block';
@@ -414,7 +425,7 @@ window.addEventListener('DOMContentLoaded', function() {
         let cardsCandidate = document.getElementsByClassName('result-count');
             
         for(let i = 0; i < cardsCandidate.length; i++) {  
-            cardsCandidate[i].innerHTML = `${resultArray[i]} %`;
+            cardsCandidate[i].innerHTML = `${resultArray[i]}%`;
         } 
 
     }
@@ -455,15 +466,12 @@ window.addEventListener('DOMContentLoaded', function() {
         for(let i = 0; i < bar.length; i++) {
             let classDiv = `progress-bar-${i + 1}`;
            bar[i].classList.add(classDiv);
+
+           let b = document.querySelectorAll(`.progress-bar-${i + 1}`)[0];
+            b.style.height = resultNumber[i].textContent;
          
         }
-        let first = document.querySelector('.progress-bar-1');
-            first.style.height = `${parseInt(resultNumber[0].textContent)}%`;
-        let second = document.querySelector('.progress-bar-2');
-        second.style.height = `${parseInt(resultNumber[1].textContent)}%`;
-
-        let third = document.querySelector('.progress-bar-3');
-        third.style.height = `${parseInt(resultNumber[2].textContent)}%`;
+        
     }
 
 

@@ -270,7 +270,15 @@ window.addEventListener('DOMContentLoaded', function () {
   resetBtn.addEventListener('click', function () {
     var card = document.getElementsByClassName('main-cards__item')[2],
         cardsBlock = document.querySelector('.main-cards');
-    cardsBlock.removeChild(card); // скрываем главный экран и модальное окно
+    cardsBlock.removeChild(card); // обнуляем набранные голоса
+
+    var resultNumber = document.getElementsByClassName('result-count');
+
+    for (var i = 0; i < resultNumber.length; i++) {
+      resultNumber[i].innerHTML = '0%';
+    }
+
+    style(); // скрываем главный экран и модальное окно
 
     overlay.style.display = 'none';
     mainBlock.style.display = 'none'; // показываем экран создания кандидата
@@ -295,7 +303,7 @@ window.addEventListener('DOMContentLoaded', function () {
     var cardsCandidate = document.getElementsByClassName('result-count');
 
     for (var i = 0; i < cardsCandidate.length; i++) {
-      cardsCandidate[i].innerHTML = "".concat(resultArray[i], " %");
+      cardsCandidate[i].innerHTML = "".concat(resultArray[i], "%");
     }
   } // вмешаться в выборы
 
@@ -332,13 +340,8 @@ window.addEventListener('DOMContentLoaded', function () {
     for (var i = 0; i < bar.length; i++) {
       var classDiv = "progress-bar-".concat(i + 1);
       bar[i].classList.add(classDiv);
+      var b = document.querySelectorAll(".progress-bar-".concat(i + 1))[0];
+      b.style.height = resultNumber[i].textContent;
     }
-
-    var first = document.querySelector('.progress-bar-1');
-    first.style.height = "".concat(parseInt(resultNumber[0].textContent), "%");
-    var second = document.querySelector('.progress-bar-2');
-    second.style.height = "".concat(parseInt(resultNumber[1].textContent), "%");
-    var third = document.querySelector('.progress-bar-3');
-    third.style.height = "".concat(parseInt(resultNumber[2].textContent), "%");
   }
 });
